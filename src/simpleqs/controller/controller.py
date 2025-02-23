@@ -1,3 +1,4 @@
+from src import make_output
 from src.simpleqs.model.dto import ConnectionListDTO
 from src.simpleqs.service.service import QueueService
 from flask.views import MethodView
