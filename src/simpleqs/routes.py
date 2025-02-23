@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_restful import Api
-from queue.controller.controller import QueueController
+from src.simpleqs.controller.controller import QueueController
 
 
 queue_blueprint = Blueprint('queue', __name__, url_prefix='/sqs')

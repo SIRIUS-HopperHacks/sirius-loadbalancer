@@ -1,7 +1,7 @@
-from lib.api import API
-from queue.model.dto import ConnectionListDTO, AlertDTO
-from queue.model.item import Item
-from lib.sqs import SimpleQS
+from src.lib.api import API
+from src.simpleqs.model.dto import ConnectionListDTO, AlertDTO
+from src.simpleqs.model.item import Item
+from src.lib.sqs import SimpleQS
 
 
 class QueueService:

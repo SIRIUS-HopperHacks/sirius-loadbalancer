@@ -1,7 +1,7 @@
 import queue
 import threading
 
-from queue.model.item import Item
+from src.simpleqs.model.item import Item
 
 
 class SimpleQS:
