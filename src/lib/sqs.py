@@ -12,9 +12,9 @@ class SimpleQS:
         
     def enqueue(self, item: Item) -> bool:
         with self.lock:
-            if item.identifier in self.identifiers:
-                return False
-            self.identifiers.add(item.identifier)
+            # if item.value in self.identifiers:
+            #     return False
+            # self.identifiers.add(item.value)
             self.q.put(item)
         return True
 

@@ -12,9 +12,8 @@ def create_app():
     app = Flask(__name__)
 
     BaseConfig(app)
-    CORS(app, supports_credentials=True)
+    CORS(app)  # Allow all origins
     API.init_app(app)
-    app.config['CORS_HEADERS'] = 'Content-Type'
     register_blueprints(app)
 
     @app.route('/health')
@@ -43,7 +42,7 @@ def create_app():
             'Data': response.data.decode('utf-8')
         }
 
-        # Decode the JSON data in the "Data" field
+       # Decode the JSON data in the "Data" field
         try:
             decoded_data = json.loads(response_info['Data'])
         except json.JSONDecodeError as e:

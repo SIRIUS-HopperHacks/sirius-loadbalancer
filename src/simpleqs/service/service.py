@@ -3,18 +3,17 @@ from src.simpleqs.model.dto import ConnectionListDTO, AlertDTO
 from src.simpleqs.model.item import Item
 from src.lib.sqs import SimpleQS
 
-
 class QueueService:
     def __init__(self):
         self.sqs = SimpleQS()
         self.api = API()
 
     def enqueue(self, input_data: ConnectionListDTO):
-        for connection in input_data.connections:
+        for connection in input_data.alerts:
             alert = AlertDTO(
-                device_id=connection.device_id,
-                alert_type=connection.alert_type,
-                alert_time=connection.alerted_time
+                deviceId=connection.deviceId,
+                alertType=connection.alertType,
+                alertTime=connection.alertedTime
             )
             self.sqs.enqueue(Item(alert.Schema().dump(alert)))
 
