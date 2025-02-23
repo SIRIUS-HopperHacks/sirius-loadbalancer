@@ -1,4 +1,4 @@
-name: Deploy Flask App to EC2
+name: Deploy Flask Image to Docker Hub
 
 on:
   pull_request_target:
