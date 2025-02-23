@@ -55,9 +55,9 @@ def create_app():
 
 
 def register_blueprints(app: Flask) -> None:
+    from src.queue.routes import queue_api
 
-
-    apis = []
+    apis = [queue_api]
 
     for _api in apis:
         app.register_blueprint(_api.blueprint)
