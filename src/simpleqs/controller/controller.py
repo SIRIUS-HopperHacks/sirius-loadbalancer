@@ -1,5 +1,5 @@
-from queue.model.dto import ConnectionListDTO
-from queue.service.service import QueueService
+from src.simpleqs.model.dto import ConnectionListDTO
+from src.simpleqs.service.service import QueueService
 from flask.views import MethodView
 from flask import request
 

@@ -5,7 +5,7 @@ from config import BaseConfig
 import logging
 import json
 
-from lib.api import API
+from src.lib.api import API
 
 
 def create_app():
@@ -59,7 +59,7 @@ def create_app():
 
 
 def register_blueprints(app: Flask) -> None:
-    from src.queue.routes import queue_api
+    from src.simpleqs.routes import queue_api
 
     apis = [queue_api]
 
