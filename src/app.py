@@ -5,12 +5,15 @@ from config import BaseConfig
 import logging
 import json
 
+from lib.api import API
+
 
 def create_app():
     app = Flask(__name__)
 
     BaseConfig(app)
     CORS(app, supports_credentials=True)
+    API.init_app(app)
     app.config['CORS_HEADERS'] = 'Content-Type'
     register_blueprints(app)
 
@@ -36,7 +39,8 @@ def create_app():
         response_info = {
             'Status Code': response.status_code,
             'Headers': dict(response.headers),
-            'Data': response.data.decode('utf-8')  # Assuming the response data is in UTF-8
+            # Assuming the response data is in UTF-8
+            'Data': response.data.decode('utf-8')
         }
 
         # Decode the JSON data in the "Data" field
